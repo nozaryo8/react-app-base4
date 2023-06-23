@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Introduce } from './pages/Introduce.tsx'
 import { RouterProvider, createBrowserRouter, HashRouter as Router } from 'react-router-dom'
-import App from './App.tsx'
 
 const router = createBrowserRouter([
 	{
@@ -19,7 +18,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 
 	<React.StrictMode>
-		<App />
+		<RouterProvider router={router} />
 	</React.StrictMode>
 )
 
