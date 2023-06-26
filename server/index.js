@@ -2,6 +2,9 @@ import express from "express";
 // import React from "react";
 // import ReactDOMServer from "react-dom/server";
 // import App from "../src/App";
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
+
 
 const PORT = 9000;
 const app = express();
