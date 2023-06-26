@@ -1,19 +1,19 @@
-import { join, resolve } from 'path';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { createRequire } from 'node:module';
+// import { join, resolve } from 'path';
+// import path from 'path';
+// import { fileURLToPath } from 'url';
+// import { createRequire } from 'node:module';
 
-const require = createRequire(import.meta.url);
+// const require = createRequire(import.meta.url);
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 export default {
 	// ES5(IE11等)向けの指定
 	// target: ["web", "es5"],
 	target: 'node',
 	//entry: `${__dirname}/src/index.js`,
-	entry: path.join(__dirname, "/server", "index.js"),
+	entry: "/Users/nozaryo8/Downloads/teck/react-app-base4/server/index.js",
 	// mode: 'development',
 	// devServer: {
 	// 	static: path.resolve(__dirname, './test-dist'),
@@ -21,8 +21,9 @@ export default {
 	// },
 	output: {
 		//path: `${__dirname}/dist`,
-		path: path.join(__dirname, "./test-dist"),
-		filename: 'main.js',
+		path: "/Users/nozaryo8/Downloads/teck/react-app-base4/test-dist",
+		// cjsで出力することでCommonJS構文を使用することができる
+		filename: 'main.cjs',
 		publicPath: '/'
 	},
 	devtool: 'inline-source-map',
@@ -43,7 +44,7 @@ export default {
 	// 		assert: require.resolve("assert/"),
 	// 		util: require.resolve("util")
 	// 	},
-	// 	extensions: ['.jsx', '.js', '.tsx', '.ts']
+	// 	extensions: ['.jsx', '.js', '.tsx', '.ts', '.cjs']
 	// },
 	// node: {
 	// 	fs: 'empty',
