@@ -1,25 +1,43 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+	"compilerOptions": {
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"lib": [
+			"ES2020",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"module": "ESNext",
+		"skipLibCheck": true,
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		// "allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		// noEmit が true となると、TypeScript からファイルが出力されず、Webpackでまとめることが出来ない
+		"noEmit": false,
+		// "declaration": true,
+		// "emitDeclarationOnly": true,
+		"jsx": "react-jsx",
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true
+	},
+	// コンパイルする対象ファイルを記述する。
+	"include": [
+		// include指定したディレクトリ下全てのファイルがコンパイル対象になる。
+		// 指定しなかったファイルはコンパイルエラーが起きる。（ファイルに赤線が出る）
+		"server",
+		// "src"
+	],
+	"exclude": [
+		// "src"
+	],
+	// "references": [
+	// 	{
+	// 		"path": "./tsconfig.node.json"
+	// 	}
+	// ]
 }

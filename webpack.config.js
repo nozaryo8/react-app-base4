@@ -27,25 +27,25 @@ export default {
 		publicPath: '/'
 	},
 	devtool: 'inline-source-map',
-	// resolve: {
-	// 	fallback: {
-	// 		path: require.resolve("path-browserify"),
-	// 		stream: require.resolve("stream-browserify"),
-	// 		fs: false,
-	// 		buffer: require.resolve("buffer/"),
-	// 		querystring: require.resolve("querystring-es3"),
-	// 		http: require.resolve("stream-http"),
-	// 		net: false,
-	// 		crypto: require.resolve("crypto-browserify"),
-	// 		zlib: require.resolve("browserify-zlib"),
-	// 		// https: false,
-	// 		// tls: false,
-	// 		async_hooks: false,
-	// 		assert: require.resolve("assert/"),
-	// 		util: require.resolve("util")
-	// 	},
-	// 	extensions: ['.jsx', '.js', '.tsx', '.ts', '.cjs']
-	// },
+	resolve: {
+		// 	fallback: {
+		// 		path: require.resolve("path-browserify"),
+		// 		stream: require.resolve("stream-browserify"),
+		// 		fs: false,
+		// 		buffer: require.resolve("buffer/"),
+		// 		querystring: require.resolve("querystring-es3"),
+		// 		http: require.resolve("stream-http"),
+		// 		net: false,
+		// 		crypto: require.resolve("crypto-browserify"),
+		// 		zlib: require.resolve("browserify-zlib"),
+		// 		// https: false,
+		// 		// tls: false,
+		// 		async_hooks: false,
+		// 		assert: require.resolve("assert/"),
+		// 		util: require.resolve("util")
+		// 	},
+		extensions: ['.jsx', '.js', '.tsx', '.ts', '.cjs']
+	},
 	// node: {
 	// 	fs: 'empty',
 	// 	path: 'empty'
@@ -69,8 +69,14 @@ export default {
 							]
 						],
 					},
-				}
+				},
 			},
+			{
+				// 拡張子 .ts もしくは .tsx の場合
+				test: /\.tsx?$/,
+				// TypeScript をコンパイルする
+				use: "ts-loader"
+			}
 			// {
 			// 	test: /\.css$/,
 			// 	use: ['style-loader', 'css-loader']
